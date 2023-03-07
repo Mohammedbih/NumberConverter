@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NumberConverter</string>
+    <string name="hint_message">Enter Number in dicemal</string>
+</resources>
