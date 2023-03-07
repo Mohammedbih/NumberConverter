@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
+import java.lang.Integer.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
@@ -30,9 +31,9 @@ class MainActivity : AppCompatActivity() {
             val num = etNumber.text.toString().toInt()
 
             tvResult.text = when(choice.checkedRadioButtonId){
-                R.id.radOctal -> Integer.toOctalString(num)
-                R.id.radHexa -> Integer.toHexString(num)
-               else -> Integer.toBinaryString(num)
+                R.id.radOctal -> toOctalString(num)
+                R.id.radHexa -> toHexString(num)
+               else -> toBinaryString(num)
             }
         }
     }
