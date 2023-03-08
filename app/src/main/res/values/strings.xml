@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">NumberConverter</string>
     <string name="hint_message">Enter Number in dicemal</string>
+    <string name="calculate">Calculate</string>
+    <string name="binary">Binary</string>
+    <string name="octal">Octal</string>
+    <string name="hexa_decimal">Hexa-Decimal</string>
 </resources>

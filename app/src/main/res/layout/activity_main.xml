@@ -11,50 +11,52 @@
         android:id="@+id/editTextNumberDecimal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/marin_medium"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/marin_medium"
+        android:fontFamily="@font/cambay"
         android:hint="@string/hint_message"
+        android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_shape"
+        android:fontFamily="@font/cambay"
         android:onClick="convert"
-        android:text="Calculate"
+        android:text="@string/calculate"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="#929292" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#6750A4"
-        android:textSize="52sp"
+        android:fontFamily="@font/cambay"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_large"
         app:layout_constraintBottom_toTopOf="@+id/btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/choice"
         app:layout_constraintVertical_bias="0.7"
-        tools:ignore="UnknownId"
         tools:text="00" />
 
     <RadioGroup
         android:id="@+id/choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/marin_medium"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal">
@@ -63,21 +65,25 @@
             android:id="@+id/radBin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Binary" />
+            android:checked="true"
+            android:fontFamily="@font/cambay"
+            android:text="@string/binary" />
 
         <RadioButton
             android:id="@+id/radOctal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="Octal" />
+            android:layout_marginStart="@dimen/margin_small"
+            android:fontFamily="@font/cambay"
+            android:text="@string/octal" />
 
         <RadioButton
             android:id="@+id/radHexa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="Hexa-Decimal" />
+            android:layout_marginStart="@dimen/margin_small"
+            android:fontFamily="@font/cambay"
+            android:text="@string/hexa_decimal" />
     </RadioGroup>
 
 
