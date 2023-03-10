@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin_large">24dp</dimen>
-    <dimen name="marin_medium">16dp</dimen>
-    <dimen name="text_size_large">52sp</dimen>
-    <dimen name="margin_small">8dp</dimen>
+    <dimen name="spacing_large">120dp</dimen>
+    <dimen name="spacing_default">16dp</dimen>
+    <dimen name="text_size">24sp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="padding_large">32dp</dimen>
 </resources>

@@ -5,16 +5,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.RadioGroup
 import android.widget.TextView
-import java.lang.Integer.*
+import com.google.android.material.chip.ChipGroup
+import java.lang.Long.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
     private lateinit var tvResult: TextView
-    private lateinit var choice: RadioGroup
+    private lateinit var choice: ChipGroup
     private lateinit var etNumber: EditText
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,14 +26,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun convert(view: View) {
-        if (etNumber.text.isNotBlank()){
-            val num = etNumber.text.toString().toInt()
-
-            tvResult.text = when(choice.checkedRadioButtonId){
-                R.id.radOctal -> toOctalString(num)
-                R.id.radHexa -> toHexString(num)
-               else -> toBinaryString(num)
+        if (etNumber.text.isNotBlank()) {
+            try {
+                val numString = etNumber.text.toString()
+                tvResult.text = when (choice.checkedChipId) {
+                    R.id.radOctal -> numString.toBaseString { toOctalString(it) }
+                    R.id.radHexa -> numString.toBaseString { toHexString(it) }
+                    else -> numString.toBaseString { toBinaryString(it) }
+                }
+            } catch (e: Exception) {
+                tvResult.text = e.message
             }
         }
+    }
+
+    private fun String.toBaseString(baseConverter: (Long) -> String): String {
+        return takeUnless { it.contains('.') }
+            ?.let {
+                baseConverter(this.toLong())
+            } ?: split(".")
+            .reduce { a, b -> a.toBaseString(baseConverter) + "." + b.toBaseString(baseConverter) }
     }
 }

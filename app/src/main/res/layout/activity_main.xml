@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFBFE"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editTextNumberDecimal"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marin_medium"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_marginEnd="@dimen/marin_medium"
+        android:layout_marginStart="@dimen/spacing_default"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_default"
+        android:background="@drawable/input_background"
         android:fontFamily="@font/cambay"
         android:hint="@string/hint_message"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
-        android:minHeight="48dp"
+        android:padding="@dimen/spacing_default"
+        android:textSize="@dimen/text_size_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,13 +31,15 @@
         android:background="@drawable/btn_shape"
         android:fontFamily="@font/cambay"
         android:onClick="convert"
+        android:paddingHorizontal="@dimen/padding_large"
         android:text="@string/calculate"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/choice"
+        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
         android:id="@+id/result"
@@ -44,47 +47,59 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/cambay"
         android:textColor="@color/text_color"
-        android:textSize="@dimen/text_size_large"
+        android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toTopOf="@+id/btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/choice"
-        app:layout_constraintVertical_bias="0.7"
         tools:text="00" />
 
-    <RadioGroup
+    <com.google.android.material.chip.ChipGroup
         android:id="@+id/choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marin_medium"
+        android:layout_marginStart="@dimen/spacing_default"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal">
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:singleSelection="true">
 
-        <RadioButton
+        <com.google.android.material.chip.Chip
             android:id="@+id/radBin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checkable="true"
             android:checked="true"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/cambay"
-            android:text="@string/binary" />
+            android:text="@string/binary"
+            app:chipBackgroundColor="@color/chip_color" />
 
-        <RadioButton
-            android:id="@+id/radOctal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:fontFamily="@font/cambay"
-            android:text="@string/octal" />
-
-        <RadioButton
+        <com.google.android.material.chip.Chip
             android:id="@+id/radHexa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/cambay"
-            android:text="@string/hexa_decimal" />
-    </RadioGroup>
+            android:text="@string/hexa_decimal"
+            app:chipBackgroundColor="@color/chip_color" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/radOctal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/cambay"
+            android:text="@string/octal"
+            app:chipBackgroundColor="@color/chip_color" />
+    </com.google.android.material.chip.ChipGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
