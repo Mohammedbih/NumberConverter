@@ -1,5 +1,8 @@
 package com.mohammedsayed.numberconverter
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -50,5 +53,12 @@ class MainActivity : AppCompatActivity() {
                 baseConverter(this.toLong())
             } ?: split(".")
             .reduce { a, b -> a.toBaseString(baseConverter) + "." + b.toBaseString(baseConverter) }
+    }
+
+    fun copy(view: View) {
+        if (tvResult.text.isBlank()) return
+
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        clipboard.setPrimaryClip(ClipData.newPlainText("label", tvResult.text.toString()))
     }
 }
