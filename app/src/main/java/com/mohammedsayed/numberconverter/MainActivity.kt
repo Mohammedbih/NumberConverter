@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
             try {
                 val numString = etNumber.text.toString()
                 tvResult.text = when (choice.checkedChipId) {
-                    R.id.radOctal -> numString.toBaseString { toOctalString(it) }
-                    R.id.radHexa -> numString.toBaseString { toHexString(it) }
+                    R.id.chipOctal -> numString.toBaseString { toOctalString(it) }
+                    R.id.chipHex -> numString.toBaseString { toHexString(it) }
                     else -> numString.toBaseString { toBinaryString(it) }
                 }
             } catch (e: Exception) {

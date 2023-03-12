@@ -4,5 +4,8 @@
         <item>@font/amaranth</item>
         <item>@font/baloo_bhai_2</item>
         <item>@font/cambay</item>
+        <item>@font/roboto</item>
+        <item>@font/roboto_medium</item>
+        <item>@font/roboto_mono</item>
     </array>
 </resources>

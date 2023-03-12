@@ -5,4 +5,8 @@
     <string name="binary">Binary</string>
     <string name="octal">Octal</string>
     <string name="hexa_decimal">Hexa-Decimal</string>
+    <string name="copy">copy</string>
+    <string name="decimal">Decimal</string>
+    <string name="to">To</string>
+    <string name="from">From</string>
 </resources>

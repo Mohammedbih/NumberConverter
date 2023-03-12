@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="spacing_large">120dp</dimen>
-    <dimen name="spacing_default">16dp</dimen>
-    <dimen name="text_size">24sp</dimen>
-    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_42">42dp</dimen>
+    <dimen name="spacing_62">62dp</dimen>
+    <dimen name="spacing_120">120dp</dimen>
+
+    <dimen name="text_size_14">14sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+
     <dimen name="padding_large">32dp</dimen>
+
+    <dimen name="edit_text_height">56dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
 </resources>
