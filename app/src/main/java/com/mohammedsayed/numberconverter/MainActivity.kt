@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initVariables()
+    }
+
+    private fun initVariables() {
         button = findViewById(R.id.btn)
         tvResult = findViewById(R.id.result)
         choice = findViewById(R.id.choice)
