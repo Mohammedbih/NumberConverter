@@ -141,12 +141,13 @@
         android:layout_height="@dimen/size_24"
         android:layout_marginEnd="@dimen/spacing_16"
         android:clickable="true"
+        android:elevation="1dp"
         android:focusable="true"
         android:onClick="clear"
-        android:elevation="1dp"
         app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/editText" />
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/editText"
