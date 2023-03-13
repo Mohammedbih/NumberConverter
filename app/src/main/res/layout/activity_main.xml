@@ -28,7 +28,8 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/tv_to"
-        app:singleSelection="true">
+        app:singleSelection="true"
+        app:selectionRequired="true">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipDec"
@@ -93,7 +94,8 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/choice"
         app:layout_constraintTop_toBottomOf="@+id/tv_from"
-        app:singleSelection="true">
+        app:singleSelection="true"
+        app:selectionRequired="true">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipDecFrom"

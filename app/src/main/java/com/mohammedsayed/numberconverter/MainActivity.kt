@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         try {
             when (choiceFrom.checkedChipId) {
                 R.id.chipDecFrom -> {
-                    result = etNumber.text.toString()
+                    result = etNumber.text.toString().toLong(10).toString()
                 }
                 R.id.chipBinFrom -> {
                     result = etNumber.text.toString().toLong(2).toString()
